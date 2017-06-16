@@ -16,12 +16,13 @@ var todosList = {
     },
     deleteTodos: function(position){
       this.todos.splice(position, 1);
-
     },
+
     toggleCompleted: function(position) {
       var todo = this.todos[position];
       todo.completed = !todo.completed;
     },
+
     toggleAll: function() {
      var totalTodos = this.todos.length;
      var completedTodos = 0;
@@ -42,7 +43,7 @@ var todosList = {
            this.todos[i].completed = true;
          }
       }
-      this.displayTodos();
+
     }
 };
 
@@ -57,25 +58,26 @@ var todosList = {
     changeTodos: function() {
       var changeTodosPositionInput = document.getElementById('changeTodosPositionInput');
       var changeTodosTextInput = document.getElementById('changeTodosTextInput');
-       todosList.changeTodos(changeTodosPositionInput.valueAsNumber, changeTodosTextInput.value)
-       changeTodosTextInput.value = '';
-       changeTodosPositionInput.value = '';
-       views.displayTodos();
+          todosList.changeTodos(changeTodosPositionInput.valueAsNumber, changeTodosTextInput.value)
+          changeTodosTextInput.value = '';
+          changeTodosPositionInput.value = '';
+          views.displayTodos();
     },
     deleteTodos: function() {
       var deleteTodosPositionInput = document.getElementById('deleteTodosPositionInput');
-       todosList.deleteTodos(deleteTodosPositionInput.valueAsNumber);
-       deleteTodosPositionInput.value = '';
+          todosList.deleteTodos(deleteTodosPositionInput.valueAsNumber);
+          deleteTodosPositionInput.value = '';
+          views.displayTodos();
     },
     toggleCompleted: function() {
       var toggleCompleted = document.getElementById('toggleCompleted');
-       todosList.toggleCompleted(toggleCompleted.valueAsNumber);
-       toggleCompleted.value = '';
-       views.displayTodos();
+          todosList.toggleCompleted(toggleCompleted.valueAsNumber);
+          toggleCompleted.value = '';
+          views.displayTodos();
     },
     toggleAll: function() {
        todosList.toggleAll();
-       views.displayTodos();
+          views.displayTodos();
    }
  };
 
