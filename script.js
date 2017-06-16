@@ -33,18 +33,25 @@ var todosList = {
         }
      });
      // Case 1: if everything's true, make everything false.
-      if (completedTodos === totalTodos) {
-         this.todos.forEach(function(todo) {
-            todo.completed = false;
-         })
-       // Case 2: otherwise make everything true.
-      } else {
-         this.todos.forEach(function(todo) {
-            todo.completed = true;
-         })
+      // if (completedTodos === totalTodos) {
+      //    this.todos.forEach(function(todo) {
+      //       todo.completed = false;
+      //    })
+      //  // Case 2: otherwise make everything true.
+      // } else {
+      //    this.todos.forEach(function(todo) {
+      //       todo.completed = true;
+      //    })
 
-      }
+      // }
 
+      this.todos.forEach(function(todo) {
+        if (completedTodos === totalTodos) {
+           todo.completed = false;
+        } else {
+           todo.completed = true;
+        }
+      });
     }
 };
 
